@@ -255,7 +255,7 @@ server <- function(input, output) {
         df_reg %>% 
             ggplot(aes(start_med_slry, mid_car_slry)) +
             geom_point(alpha = 0.5) +
-            geom_jitter() + geom_smooth() +
+            geom_jitter() + geom_smooth(se=FALSE) +
             xlab("Starting Salary") +
             ylab("Mid Career Salary") +
             scale_x_continuous(labels=dollar) +
