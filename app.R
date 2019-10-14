@@ -57,10 +57,11 @@ ui <- fluidPage(
              p("Choosing a college can be difficult, let alone choosing a major which can ultimately define your entire career and your paycheck. 
              Will knowing how the possible outcome of each decision, make your decision easier?" , style="font-size:19px"),
              br(),
-             p("1. Does it matter which college I attend?", style="font-size:19px"),  
-             p("2. Which major will yield the highest salary?", style="font-size:19px"),
+             p("1. Does it matter which name college I attend?", style="font-size:19px"),  
+             p("2. Which major will yield the highest salary? Highest potential?", style="font-size:19px"),
              p("3. Does it matter in what region?", style="font-size:19px"),
-             p("4. Is paying that much for a type of college really worth it?", style="font-size:19px"),
+             p("4. Will the type of college impact salary?", style="font-size:19px"),
+             p("5. Is paying for an Ivy League education really worth it?", style="font-size:19px"),
              br(),
              p("Firstly, let's look and see if there a correlation between starting median salary and mid career salary", style="font-size:17px"),
              plotOutput("plot4"),
@@ -87,7 +88,8 @@ ui <- fluidPage(
              tabsetPanel(
                tabPanel("Salaries by Major",
                         p("Do starting and mid career salaries differ between majors?", style="font-size:17px"),
-                        p("Majors with higher starting salaries do not necessarily have higher mid career salaries. Overall, the top starting and mid career salaries are engineering-related majors."),
+                        p("-Majoring in engineering or math-related subjects have an overall higher starting and mid career salary. There are a few
+                          majors with higher starting salaries (i.e. Physician Assistant) do not necessarily have higher mid career salaries and vice versa (i.e. Economics, which starts out lower, but has higher mid career salary."),
                         splitLayout(cellWidths=c("50%", "50%"),
                                     plotOutput(
                                       outputId ="chart2",
@@ -96,8 +98,13 @@ ui <- fluidPage(
                                       outputId = "chart3",
                                       height = "1200px"))),
                tabPanel("Salary Distribution by Major",
-                        p("Distribution of salaries/major (10th, 25th, 75th, 90th) percentile"),
-                        p("There is greater range of salaries with engineering/math-related and finance/economics majors."),
+                        p("Distribution of salaries/major (10th, 25th, 75th, 90th) percentile mid career"),
+                        p("Which majors have the most potential in regards to salary?"),
+                        p("-Engineering/math-related and finance/economics majors have a wide range of salary distribution and higher median salaries mid career."), 
+                        p("-Majors such as religion, spanish, education, nutrition, health care admin and nursing has a less likelihood of earning ~100K mid career, with the median being a little over $50K."),
+                        p("-Majors such as Physician Assistant guarantees a higher baseline pay mid career, but the range is short and max. salary is ~125K mid career."),
+                        p("-Majoring in economics yields the largest distribution of salary mid career, and the most potential of earning over $200K."),
+                        p("-Different majors such as history, agriculture, journalism, communications film, and biology do not offer much of a difference in salary mid career."),
                         plotOutput(
                           outputId="chart4",
                           height="1200px"))
@@ -129,21 +136,31 @@ ui <- fluidPage(
     
 
 
-    tabPanel("Is it worth it?",
+    tabPanel("Salaries by College Type",
              tabsetPanel(
-               tabPanel("Salaries by School Type", 
-                        p("What type of school should I go to?"),
+               tabPanel("College Types", 
+                        p("Distribution of Salaries by College Type"),
+                        plotOutput(outputId="chart7", height="500px"),
+                        p("Majority of the data available/represented are from state colleges.")),
+               tabPanel("Salaries by College Type", 
+                        p("Does the type of college I attend matter?"),
                         plotOutput(outputId="chart5", height="500px"),
                         p("1. Going to an Ivy League will you give you the best chances of higher pay. Ivy League has less range in the starting salary and you're almost guaranteed ~$60K upon starting."),
-                        p("2. Engineering school also gives you a good chance of higher starting and mid career salary."),
-                        p("3. Going to a party school may have a higher minimum starting salary over going to a liberal arts or state school. However, a liberal arts college will have a slight advantage in avg mid career salary over a party or state school."),
-                        p("4. A state school will yield the lowest average starting and mid career salary but may have a higher max. mid career salary over a party school.")),
+                        p("2. Engineering schoos also gives you a good chance of higher starting and mid career salary."),
+                        p("3. Going to a party school may have a higher minimum starting salary over going to a liberal arts or state school. However, a liberal arts college will have a slight advantage in median mid career salary over a party or state school."),
+                        p("4. A state school will yield the lowest median starting and mid career salary but may have a higher max. mid career salary over a party school.")),
                tabPanel("Salaries vs Tuition Cost",
                         p("Is it worth going to an Ivy League?"),
                         plotOutput(outputId = "chart6", height="500px"),
                         p("Starting salaries upon graduating from an Ivy League is similar to an engineering school. However, to get the best
                           'bang for your buck', go to an engineering school in-state and pay in-state tuition. The starting salary is similar and you end up with less debt.")))
-  ))
+            ),
+  
+             tabPanel("Observations",
+                      p("Do starting and mid career salaries differ between majors?", style="font-size:17px")
+            
+          ))
+
 )
 
 
@@ -153,7 +170,7 @@ server <- function(input, output) {
   
     output$plot1 <- renderPlot(
             ggplot(df_reg, aes(region)) +
-            geom_bar(color = 'slategray', alpha = 0.8)+
+            geom_bar(color = 'slategray')+
             xlab(NULL) +
             ggtitle("Distribution of Salaries by Region")
      ) 
@@ -345,6 +362,12 @@ server <- function(input, output) {
         
     )
     
+    output$chart7 <- renderPlot(
+        ggplot(df_col, aes(school_type)) +
+        geom_bar(color = 'slategray')+
+        xlab(NULL) +
+        ggtitle("Distribution of College Types")
+    )
  
     
 }
