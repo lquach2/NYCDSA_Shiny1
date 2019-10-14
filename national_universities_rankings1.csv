@@ -1,0 +1,232 @@
+name,rank,tuition_and_fees,in_state
+Princeton University,1,"$45,320",
+Harvard University,2,"$47,074",
+University of Chicago,3,"$52,491",
+Yale University,3,"$49,480",
+Columbia University,5,"$55,056",
+Stanford University,5,"$47,940",
+Massachusetts Institute of Technology (MIT),7,"$48,452",
+Duke University,8,"$51,265",
+University of Pennsylvania,8,"$51,464",
+Johns Hopkins University,10,"$50,410",
+Dartmouth College,11,"$51,438",
+California Institute of Technology (CIT),12,"$47,577",
+Northwestern University,12,"$50,855",
+Brown University,14,"$51,367",
+Cornell University,15,"$50,953",
+Rice University,15,"$43,918",
+University of Notre Dame,15,"$49,685",
+Vanderbilt University,15,"$45,610",
+Washington University in St. Louis,19,"$49,770",
+Emory University,20,"$47,954",
+Georgetown University,20,"$50,547",
+"University of California, Berkeley",20,"$40,191","$13,509"
+University of Southern California,23,"$52,217",
+Carnegie Mellon University,24,"$52,040",
+University of California at Los Angeles (UCLA),24,"$39,518","$12,836"
+University of Virginia,24,"$45,066","$15,722"
+Tufts University,27,"$52,430",
+University of Michigan--Ann Arbor,27,"$43,476","$13,856"
+Wake Forest University,27,"$49,308",
+University of North Carolina at Chapel Hill (UNCH),30,"$33,916","$8,834"
+Boston College,31,"$51,296",
+College of William & Mary,32,"$41,718","$18,687"
+University of Rochester,32,"$50,142",
+Brandeis University,34,"$51,570",
+Georgia Institute of Technology,34,"$32,404","$12,212"
+New York University,36,"$49,062",
+Case Western Reserve University,37,"$46,006",
+"University of California, Santa Barbara (UCSB)",37,"$40,704","$14,022"
+Boston University,39,"$50,240",
+Northeastern University,39,"$47,655",
+Rensselaer Polytechnic Institute (RPI),39,"$50,797",
+Tulane University,39,"$51,010",
+"University of California, Irvine (UCI)",39,"$39,458","$14,750"
+Lehigh University,44,"$48,320",
+"University of California, Davis",44,"$40,728","$14,046"
+"University of California, San Diego (UCSD)",44,"$41,387","$14,705"
+University of Illinois at Urbana-Champaign (UIUC),44,"$31,320","$15,698"
+University of Miami,44,"$47,004",
+University of Wisconsin--Madison,44,"$32,738","$10,488"
+Pepperdine University,50,"$50,022",
+University of Florida (UF),50,"$28,666","$6,389"
+Villanova University,50,"$49,280",
+Pennsylvania State University--University Park,50,"$32,382","$17,900"
+Ohio State University--Columbus,54,"$29,229","$10,037"
+University of Washington,54,"$34,791","$10,753"
+George Washington University,56,"$51,950",
+Southern Methodist University,56,"$50,358",
+University of Georgia (UGA),56,"$29,844","$11,634"
+University of Texas--Austin,56,"$34,676","$9,806"
+Fordham University,60,"$47,317",
+Purdue University--West Lafayette,60,"$28,804","$10,002"
+Syracuse University,60,"$45,022",
+University of Connecticut,60,"$35,858","$14,066"
+University of Maryland--College Park,60,"$32,045","$10,181"
+Worcester Polytechnic Institute,60,"$46,994",
+Clemson University,66,"$32,796","$14,240"
+Yeshiva University,66,"$40,670",
+Brigham Young University--Provo,68,"$5,300",
+University of Pittsburgh,68,"$29,758","$18,618"
+Rutgers University--New Brunswick,70,"$30,023","$14,372"
+Baylor University,71,"$42,006",
+Stevens Institute of Technology,71,"$48,838",
+University of Minnesota--Twin Cities,71,"$22,210","$13,790"
+American University,74,"$44,853",
+Clark University,74,"$43,150",
+Texas A&M University--College Station,74,"$28,768","$10,176"
+University of Massachusetts--Amherst,74,"$30,123","$13,790"
+Virginia Polytechnic Institute and State University (Virginia Tech),74,"$29,371","$12,852"
+Miami University--Oxford,79,"$31,592","$14,288"
+University of California--Santa Cruz,79,"$40,241","$13,559"
+University of Delaware,79,"$31,420","$12,520"
+Colorado School of Mines,82,"$34,828","$17,383"
+Michigan State University,82,"$39,090","$14,070"
+Texas Christian University,82,"$42,670",
+University of Iowa (UI),82,"$28,413","$8,325"
+Binghamton University,86,"$22,164","$9,044"
+"Indiana University (IU), Bloomington",86,"$34,246","$10,388"
+Marquette University,86,"$38,470",
+University of Denver,86,"$46,362",
+University of San Diego,86,"$46,140",
+University of Tulsa,86,"$38,796",
+Florida State University (FSU),92,"$24,673","$9,507"
+North Carolina State University--Raleigh,92,"$26,399","$8,880"
+University of Colorado - Boulder (UCB),92,"$35,079","$11,531"
+University of Vermont (UVM),92,"$40,364","$17,300"
+Drexel University,96,"$51,030",
+Illinois Institute of Technology (IIT),96,"$40,726",
+Stony Brook University,96,"$26,266","$9,026"
+Auburn University,99,"$28,840","$10,696"
+Loyola University Chicago,99,"$41,384",
+SUNY College of Environmental Science and Forestry,99,"$17,620","$7,770"
+State University of New York (SUNY) at Buffalo,99,"$26,270","$9,770"
+Illinois Institute of Technology (IIT),103,"$45,214",
+University of Alabama,103,"$26,950","$10,470"
+University of Oregon,103,"$33,442","$10,762"
+University of Tennessee,103,"$30,858","$12,668"
+Rochester Institute of Technology (RIT),107,"$38,568",
+University of New Hampshire (UNH),107,"$31,424","$17,624"
+University of San Francisco,107,"$44,494",
+University of South Carolina,107,"$31,282","$11,854"
+Iowa State University,111,"$21,483","$7,969"
+University of Dayton,111,"$40,940",
+University of Missouri,111,"$25,892","$9,518"
+University of Nebraska--Lincoln,111,"$23,148","$8,628"
+University of Oklahoma,111,"$21,451","$8,065"
+University of the Pacific,111,"$44,588",
+University of Utah,111,"$27,039","$8,518"
+Michigan Technological University,118,"$30,968","$14,634"
+Seton Hall University,118,"$39,258",
+Temple University,118,"$25,994","$15,688"
+"University of California, Riverside (UCR)",118,"$40,263","$13,581"
+University of Kansas,118,"$25,932","$10,549"
+University of St. Thomas,118,"$39,594",
+The Catholic University of America,124,"$42,536",
+DePaul University,124,"$37,626",
+Duquesne University,124,"$35,062",
+Howard University,124,"$24,908",
+University of Arizona,124,"$30,025","$10,872"
+Arizona State University--Tempe,129,"$25,458","$10,158"
+Clarkson University,129,"$46,132",
+Colorado State University (CSU),129,"$28,374","$11,080"
+New School,129,"$45,535",
+Hofstra University,133,"$42,160",
+University of Kentucky (UK),133,"$26,334","$11,484"
+Kansas State University (KSU),135,"$23,429","$9,350"
+Louisiana State University--Baton Rouge,135,"$27,005","$9,842"
+Mercer University,135,"$35,130",
+New Jersey Institute of Technology,135,"$30,326","$16,108"
+Rutgers University,135,"$29,480","$13,829"
+University of Arkansas,135,"$23,168","$8,820"
+University of Cincinnati,135,"$26,334","$11,000"
+University of Mississippi,135,"$22,012","$7,744"
+George Mason University,143,"$32,582","$11,300"
+Oregon State University (OSU),143,"$28,846","$10,366"
+Washington State University,143,"$25,673","$11,041"
+Adelphi University,146,"$34,034",
+Ohio University,146,"$21,208","$11,744"
+San Diego State University (SDSU),146,"$18,244","$7,084"
+St. John Fisher College,146,"$31,880",
+State University of New York (SUNY) at Albany,146,"$22,244","$9,124"
+University of Texas--Dallas,146,"$33,654","$12,162"
+Illinois State University,152,"$20,886","$13,296"
+Immaculata University,152,"$35,210",
+Oklahoma State University,152,"$20,978","$7,778"
+University of California--Merced,152,"$39,944","$13,262"
+University of Illinois--Chicago,152,"$26,526","$13,670"
+University of La Verne,152,"$39,900",
+University of Massachusetts (UMass) - Lowell,152,"$29,125","$13,427"
+Seattle Pacific University,159,"$38,940",
+University of Alabama at Birmingham (UAB),159,"$17,654","$7,766"
+University of Maryland Baltimore County (UMBC),159,"$24,492","$11,264"
+University of Rhode Island (URI),159,"$28,852","$12,862"
+University of South Florida (USF),159,"$17,325","$6,410"
+Biola University,164,"$36,696",
+Maryville University of St. Louis,164,"$27,958",
+Missouri University of Science & Technology,164,"$26,152","$9,628"
+St. John's University,164,"$39,460",
+Virginia Commonwealth University (VCU),164,"$31,608","$13,076"
+Union University,169,"$30,420",
+University of Hawaii--Manoa,169,"$33,764","$11,732"
+Edgewood College,171,"$27,530",
+Florida Institute of Technology,171,"$40,446",
+University of Idaho,171,"$22,040","$7,232"
+University of Louisville,171,"$24,626","$10,738"
+University of Wyoming (UW),171,"$16,215","$5,055"
+Ball State University,176,"$25,428","$9,654"
+Lipscomb University,176,"$29,756",
+Mississippi State University (MSU),176,"$20,142","$7,502"
+Montclair State University,176,"$20,318","$11,771"
+Texas Tech University,176,"$22,861","$10,622"
+University of Central Florida (UCF),176,"$22,467","$6,368"
+University of New Mexico (UNM),176,"$21,302","$7,071"
+Andrews University,183,"$27,684",
+Azusa Pacific University,183,"$36,120",
+University of Maine,183,"$29,498","$10,628"
+West Virginia University (WVU),183,"$21,432","$7,632"
+Widener University,183,"$42,870",
+Kent State University,188,"$18,376","$10,012"
+North Dakota State University (NDSU),188,"$19,790","$9,046"
+Pace University,188,"$42,772",
+Robert Morris University,188,"$28,250",
+Suffolk University,188,"$35,578",
+University of Hartford,188,"$37,790",
+Bowling Green State University,194,"$18,332","$10,796"
+University of Houston (UH),194,"$25,410","$10,710"
+Western Michigan University (WMU),194,"$25,713","$11,029"
+Purdue University,197,"$29,791","$9,205"
+Lesley University,197,"$25,750",
+University of Alabama at Huntsville (UAH),197,"$20,622","$9,128"
+University of Colorado - Denver,197,"$29,334","$10,404"
+"University of Nevada, Reno (UNR)",197,"$21,052","$7,142"
+"California State University, Fullerton (CSUF)",202,"$17,596","$6,436"
+Central Michigan University,202,"$23,670","$12,150"
+Louisiana Tech University,202,"$25,851","$8,853"
+South Dakota State University (SDSU),202,"$11,403","$8,172"
+University of Alaska--Fairbanks,202,"$22,469","$7,799"
+University of North Carolina at Charlotte (UNCC),202,"$20,193","$6,617"
+University of North Dakota,202,"$18,899","$4,965"
+University of South Dakota,202,"$11,688","$8,457"
+East Carolina University (ECU),210,"$22,904","$6,946"
+Montana State University,210,"$23,042","$7,031"
+Old Dominion University,210,"$27,028","$10,048"
+University of Missouri--Kansas City,210,"$22,714","$9,551"
+Ashland University,214,"$20,392",
+Dallas Baptist University,214,"$26,180",
+Northern Illinois University,214,"$23,799","$14,334"
+Nova Southeastern University,214,"$27,660",
+Southern Illinois University--Carbondale,214,"$27,130","$13,481"
+University of Montana,214,"$24,562","$6,446"
+Benedictine University,220,"$32,170",
+California State University--Fresno,220,"$17,209","$6,313"
+Gardner-Webb University,220,"$29,850",
+New Mexico State University,220,"$21,234","$6,729"
+Shenandoah University,220,"$31,322",
+Tennessee Technological University,220,"$24,800","$16,311"
+University of Massachusetts (UMass) - Boston,220,"$32,023","$13,435"
+University of Massachusetts (UMass) - Dartmouth,220,"$19,270","$12,588"
+University of Missouri - St. Louis (UMSL),220,"$26,277","$10,065"
+University of North Carolina--Greensboro,220,"$21,595","$6,733"
+University of Southern Mississippi,220,"$16,094","$7,224"
+Utah State University,220,"$19,772","$6,866"

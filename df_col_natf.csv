@@ -1,0 +1,109 @@
+"","school_name","school_type","start_med_slry","mid_car_slry","mid_car_10th","mid_car_25th","mid_car_75th","mid_car_90th","region","rank","description","tuiition_fees","in_state","undergrad_enroll","X8"
+"1","Auburn University","State",45400,84700,45400,62700,109000,145000,"Auburn, AL",99,NA,28840,10696,21786,NA
+"2","Binghamton University","State",53600,95900,50900,71200,146000,201000,"Binghamton, NY",86,NA,22164,9044,13491,NA
+"3","Bowling Green State University","State",39800,72100,38200,51800,101000,146000,"Bowling Green, OH",194,85,18332,10796,14334,NA
+"4","Brown University","Ivy League",56200,109000,55400,74400,159000,228000,"Providence, RI",14,NA,51367,NA,6652,NA
+"5","California Institute of Technology (CIT)","Engineering",75500,123000,NA,104000,161000,NA,"Pasadena, CA",12,11,47577,NA,1001,NA
+"6","California State University, Fullerton (CSUF)","State",45700,87000,45400,62500,119000,158000,"Fullerton, CA",202,NA,17596,6436,33144,NA
+"7","Clemson University","State",48400,86000,50500,61800,111000,150000,"Clemson, SC",66,NA,32796,14240,18016,NA
+"8","Colorado School of Mines","Engineering",58100,106000,62200,87900,142000,201000,"Golden, CO",82,NA,34828,17383,4608,NA
+"9","Colorado State University (CSU)","State",44800,79000,43800,57100,112000,150000,"Fort Collins, CO",129,NA,28374,11080,24433,NA
+"10","Columbia University","Ivy League",59400,107000,50300,71900,161000,241000,"New York, NY",5,NA,55056,NA,6102,NA
+"11","Cornell University","Ivy League",60300,110000,56800,79800,160000,210000,"Ithaca, NY",15,1000,50953,NA,14315,NA
+"12","Dartmouth College","Ivy League",58000,134000,63100,90200,234000,321000,"Hanover, NH",11,NA,51438,NA,4307,NA
+"13","East Carolina University (ECU)","State",40200,67500,38400,52000,98700,151000,"Greenville, NC",210,80,22904,6946,23039,NA
+"14","Florida State University (FSU)","State",42100,73000,39600,52800,107000,156000,"Tallahassee, FL",92,NA,24673,9507,32706,NA
+"15","Florida State University (FSU)","Party",42100,73000,39600,52800,107000,156000,"Tallahassee, FL",92,NA,24673,9507,32706,NA
+"16","George Mason University","State",47800,86900,51300,67200,114000,150000,"Fairfax, VA",143,NA,32582,11300,23062,NA
+"17","Georgia Institute of Technology","Engineering",58300,106000,67200,85200,137000,183000,"Atlanta, GA",34,NA,32404,12212,15142,NA
+"18","Harvard University","Ivy League",63400,124000,54800,86200,179000,288000,"Cambridge, MA",2,NA,47074,NA,6699,NA
+"19","Illinois Institute of Technology (IIT)","Engineering",56000,97800,56100,77400,121000,165000,"St. Louis, MO",96,NA,40726,NA,8248,NA
+"20","Illinois Institute of Technology (IIT)","Engineering",56000,97800,56100,77400,121000,165000,"Chicago, IL",103,NA,45214,NA,2991,NA
+"21","Illinois State University","State",42000,73400,39100,55200,105000,142000,"Normal, IL",152,130,20886,13296,18426,NA
+"22","Indiana University (IU), Bloomington","State",46300,84000,43600,60400,119000,178000,"Bloomington, IN",86,NA,34246,10388,38364,NA
+"23","Indiana University (IU), Bloomington","Party",46300,84000,43600,60400,119000,178000,"Bloomington, IN",86,NA,34246,10388,38364,NA
+"24","Iowa State University","State",45400,84600,44400,60000,109000,147000,"Ames, IA",111,NA,21483,7969,30034,NA
+"25","Kansas State University (KSU)","State",43300,79000,37200,54100,106000,138000,"Manhattan, KS",135,NA,23429,9350,19859,NA
+"26","Kent State University","State",38700,62600,36100,45800,87000,124000,"Kent, OH",188,40,18376,10012,23607,NA
+"27","Massachusetts Institute of Technology (MIT)","Engineering",72200,126000,76800,99200,168000,220000,"Cambridge, MA",7,NA,48452,NA,4527,NA
+"28","Mississippi State University (MSU)","State",44500,79300,43300,58800,108000,151000,"Mississippi State, MS",176,170,20142,7502,17421,NA
+"29","New Mexico State University","State",44300,79500,37400,53800,102000,131000,"Las Cruces, NM",220,50,21234,6729,12526,NA
+"30","North Dakota State University (NDSU)","State",45100,77800,39000,55800,1e+05,123000,"Fargo, ND",188,NA,19790,9046,12037,NA
+"31","Ohio University","State",42200,73400,36600,52800,106000,150000,"Athens, OH",146,NA,21208,11744,23513,NA
+"32","Ohio University","Party",42200,73400,36600,52800,106000,150000,"Athens, OH",146,NA,21208,11744,23513,NA
+"33","Oklahoma State University","State",42800,80700,40100,56500,114000,151000,"Stillwater, OK",152,NA,20978,7778,21046,NA
+"34","Oregon State University (OSU)","State",45100,83300,46900,64000,113000,146000,"Corvallis, OR",143,90,28846,10366,24612,NA
+"35","Princeton University","Ivy League",66500,131000,68900,1e+05,190000,261000,"Princeton, NJ",1,NA,45320,NA,5402,NA
+"36","Purdue University","State",51400,90500,49900,67400,121000,168000,"Indianapolis, IN",197,NA,29791,9205,21985,NA
+"37","Rensselaer Polytechnic Institute (RPI)","Engineering",61100,110000,71600,85500,140000,182000,"Troy, NY",39,NA,50797,NA,5864,NA
+"38","Rochester Institute of Technology (RIT)","Engineering",48900,84600,45000,62100,112000,159000,"Rochester, NY",107,NA,38568,NA,12607,NA
+"39","Rutgers University","State",50300,91800,48100,65100,128000,176000,"Newark, NJ",135,NA,29480,13829,7713,NA
+"40","San Diego State University (SDSU)","State",46200,85200,45500,61800,116000,158000,"San Diego, CA",146,1897,18244,7084,29234,NA
+"41","South Dakota State University (SDSU)","State",41100,73500,34100,49900,99400,129000,"Brookings, SD",202,1881,11403,8172,11007,NA
+"42","State University of New York (SUNY) at Albany","State",44500,92200,47000,63100,135000,209000,"Albany, NY",146,50,22244,9124,12908,NA
+"43","State University of New York (SUNY) at Albany","Party",44500,92200,47000,63100,135000,209000,"Albany, NY",146,50,22244,9124,12908,NA
+"44","State University of New York (SUNY) at Buffalo","State",46200,81700,45900,61400,110000,147000,"Buffalo, NY",99,1846,26270,9770,19951,NA
+"45","Stevens Institute of Technology","Engineering",60600,105000,68700,81900,138000,185000,"Hoboken, NJ",71,NA,48838,NA,2873,NA
+"46","Stony Brook University","State",49500,93000,47200,67100,129000,181000,"Stony Brook, NY",96,64,26266,9026,16831,NA
+"47","Tennessee Technological University","Engineering",46200,80000,42100,62600,99500,121000,"Cookeville, TN",220,1915,24800,16311,9801,NA
+"48","University of Alabama at Birmingham (UAB)","State",39200,70100,43000,53400,91400,125000,"Birmingham, AL",159,1969,17654,7766,11511,NA
+"49","University of Alabama at Huntsville (UAH)","State",43100,82700,46100,67800,106000,132000,"Huntsville, AL",197,NA,20622,9128,6013,NA
+"50","University of Arizona","State",47500,86100,44800,61700,117000,160000,"Tucson, AZ",124,NA,30025,10872,33732,NA
+"51","University of Arkansas","State",44100,82800,43200,60700,113000,160000,"Fayetteville, AR",135,NA,23168,8820,22159,NA
+"52","University of California at Los Angeles (UCLA)","State",52600,101000,51300,72500,139000,193000,"Los Angeles, CA",24,NA,39518,12836,29585,NA
+"53","University of California, Berkeley","State",59900,112000,59500,81000,149000,201000,"Berkeley, CA",20,NA,40191,13509,27496,NA
+"54","University of California, Davis","State",52300,99600,52000,71600,135000,202000,"Davis, CA",44,NA,40728,14046,28384,NA
+"55","University of California, Irvine (UCI)","State",48300,96700,47800,66000,123000,172000,"Irvine, CA",39,NA,39458,14750,25256,NA
+"56","University of California, Riverside (UCR)","State",46800,81300,37200,59900,109000,134000,"Riverside, CA",118,NA,40263,13581,18608,NA
+"57","University of California, San Diego (UCSD)","State",51100,101000,51700,75400,131000,177000,"La Jolla, CA",44,NA,41387,14705,26590,NA
+"58","University of California, Santa Barbara (UCSB)","Party",50500,95000,51300,71200,129000,173000,"Santa Barbara, CA",37,100,40704,14022,20607,NA
+"59","University of California, Santa Barbara (UCSB)","State",50500,95000,51300,71200,129000,173000,"Santa Barbara, CA",37,100,40704,14022,20607,NA
+"60","University of Central Florida (UCF)","State",42600,71700,39500,51500,98400,125000,"Orlando, FL",176,NA,22467,6368,54513,NA
+"61","University of Colorado - Boulder (UCB)","State",47100,97600,51600,69000,128000,187000,"Boulder, CO",92,NA,35079,11531,27010,NA
+"62","University of Colorado - Denver","State",46100,84400,46400,58600,105000,144000,"Denver, CO",197,NA,29334,10404,14036,NA
+"63","University of Delaware","State",45900,84500,44500,64000,119000,165000,"Newark, DE",79,NA,31420,12520,18322,NA
+"64","University of Florida (UF)","State",47100,87900,45400,62900,120000,172000,"Gainesville, FL",50,50000,28666,6389,35043,NA
+"65","University of Florida (UF)","Party",47100,87900,45400,62900,120000,172000,"Gainesville, FL",50,50000,28666,6389,35043,NA
+"66","University of Georgia (UGA)","State",44100,86000,43100,57800,118000,164000,"Athens, GA",56,NA,29844,11634,27547,NA
+"67","University of Georgia (UGA)","Party",44100,86000,43100,57800,118000,164000,"Athens, GA",56,NA,29844,11634,27547,NA
+"68","University of Houston (UH)","State",46000,79900,42000,56200,106000,141000,"Houston, TX",194,NA,25410,10710,34716,NA
+"69","University of Idaho","State",44900,82000,43000,56700,104000,142000,"Moscow, ID",171,NA,22040,7232,9116,NA
+"70","University of Illinois at Urbana-Champaign (UIUC)","Party",52900,96100,48200,68900,132000,177000,"Champaign, IL",44,NA,31320,15698,33368,NA
+"71","University of Illinois at Urbana-Champaign (UIUC)","State",52900,96100,48200,68900,132000,177000,"Champaign, IL",44,NA,31320,15698,33368,NA
+"72","University of Iowa (UI)","Party",44700,83900,43300,61100,116000,163000,"Iowa City, IA",82,NA,28413,8325,23357,NA
+"73","University of Iowa (UI)","State",44700,83900,43300,61100,116000,163000,"Iowa City, IA",82,NA,28413,8325,23357,NA
+"74","University of Kansas","State",42400,81600,44800,57200,115000,156000,"Lawrence, KS",118,1865,25932,10549,19245,NA
+"75","University of Kentucky (UK)","State",42800,78300,43000,57300,107000,149000,"Lexington, KY",133,80,26334,11484,22705,NA
+"76","University of Maryland Baltimore County (UMBC)","State",47000,77800,46900,59100,105000,130000,"Baltimore, MD",159,NA,24492,11264,11243,NA
+"77","University of Massachusetts (UMass) - Boston","State",45600,78200,36300,53800,109000,151000,"Boston, MA",220,1964,32023,13435,12949,NA
+"78","University of Massachusetts (UMass) - Dartmouth","State",43200,77700,43300,56200,107000,132000,"North Dartmouth, MA",220,60,19270,12588,7295,NA
+"79","University of Massachusetts (UMass) - Lowell","State",45400,86600,50900,65000,113000,158000,"Lowell, MA",152,1894,29125,13427,13266,NA
+"80","University of Mississippi","Party",41400,79700,40400,53500,108000,186000,"University, MS",135,NA,22012,7744,18785,NA
+"81","University of Mississippi","State",41400,79700,40400,53500,108000,186000,"University, MS",135,NA,22012,7744,18785,NA
+"82","University of Missouri - St. Louis (UMSL)","State",41400,67100,36800,49600,97600,144000,"St. Louis, MO",220,NA,26277,10065,13569,NA
+"83","University of Montana","State",37300,71900,37000,51500,96400,138000,"Missoula, MT",214,NA,24562,6446,8732,NA
+"84","University of Nevada, Reno (UNR)","State",46500,82900,41900,54600,113000,143000,"Reno, NV",197,NA,21052,7142,17770,NA
+"85","University of New Hampshire (UNH)","Party",41800,78300,41700,56400,114000,147000,"Durham, NH",107,NA,31424,17624,13034,NA
+"86","University of New Hampshire (UNH)","State",41800,78300,41700,56400,114000,147000,"Durham, NH",107,NA,31424,17624,13034,NA
+"87","University of New Mexico (UNM)","State",41600,81600,41800,59100,105000,141000,"Albuquerque, NM",176,1889,21302,7071,20522,NA
+"88","University of North Carolina at Chapel Hill (UNCH)","State",42900,81500,43400,57500,117000,155000,"Chapel Hill, NC",30,NA,33916,8834,18415,NA
+"89","University of North Carolina at Charlotte (UNCC)","State",43100,74000,38200,53200,99500,133000,"Charlotte, NC",202,1946,20193,6617,22732,NA
+"90","University of North Dakota","State",44000,80600,43400,56400,111000,157000,"Grand Forks, ND",202,NA,18899,4965,11577,NA
+"91","University of Oklahoma","State",44700,82900,41200,60300,114000,167000,"Norman, OK",111,NA,21451,8065,22132,NA
+"92","University of Oregon","State",42200,78400,38100,56200,117000,186000,"Eugene, OR",103,NA,33442,10762,20538,NA
+"93","University of Pennsylvania","Ivy League",60900,120000,55900,79200,192000,282000,"Philadelphia, PA",8,NA,51464,NA,9726,NA
+"94","University of Rhode Island (URI)","State",43900,85300,45400,60100,112000,157000,"Kingston, RI",159,NA,28852,12862,13641,NA
+"95","University of South Carolina","State",40000,71700,36300,49900,98400,131000,"Columbia, SC",107,NA,31282,11854,25237,NA
+"96","University of South Florida (USF)","State",41100,71100,39600,51500,98100,131000,"Tampa, FL",159,NA,17325,6410,31111,NA
+"97","University of Tennessee","Party",43800,74600,41900,53200,106000,153000,"Knoxville, TN",103,NA,30858,12668,21863,NA
+"98","University of Tennessee","State",43800,74600,41900,53200,106000,153000,"Knoxville, TN",103,NA,30858,12668,21863,NA
+"99","University of Utah","State",45400,83200,43000,58400,116000,148000,"Salt Lake City, UT",111,NA,27039,8518,23794,NA
+"100","University of Vermont (UVM)","State",44800,82700,44700,58000,122000,194000,"Burlington, VT",92,NA,40364,17300,10973,NA
+"101","University of Wyoming (UW)","State",44500,78700,41500,54000,105000,145000,"Laramie, WY",171,NA,16215,5055,10045,NA
+"102","Utah State University","State",43800,78700,41600,55400,101000,132000,"Logan, UT",220,1888,19772,6866,25259,NA
+"103","Virginia Commonwealth University (VCU)","State",42000,68400,37400,51900,1e+05,123000,"Richmond, VA",164,NA,31608,13076,24051,NA
+"104","Virginia Polytechnic Institute and State University (Virginia Tech)","Engineering",53500,95400,50600,71400,124000,163000,"Blacksburg, VA",74,NA,29371,12852,25384,NA
+"105","West Virginia University (WVU)","State",43100,78100,39700,55700,106000,141000,"Morgantown, WV",183,NA,21432,7632,22498,NA
+"106","West Virginia University (WVU)","Party",43100,78100,39700,55700,106000,141000,"Morgantown, WV",183,NA,21432,7632,22498,NA
+"107","Western Michigan University (WMU)","State",42300,73800,40100,52500,103000,135000,"Kalamazoo, MI",194,NA,25713,11029,18567,NA
+"108","Yale University","Ivy League",59100,126000,58000,80600,198000,326000,"New Haven, CT",3,NA,49480,NA,5532,NA
