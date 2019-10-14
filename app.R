@@ -61,11 +61,11 @@ ui <- fluidPage(
              p("2. Which major will yield the highest salary? Highest potential?", style="font-size:19px"),
              p("3. Does it matter in what region?", style="font-size:19px"),
              p("4. Will the type of college impact salary?", style="font-size:19px"),
-             p("5. Is paying for an Ivy League education really worth it?", style="font-size:19px"),
+             p("5. Is paying for an Ivy League education really worth it in regards to salary?", style="font-size:19px"),
              br(),
              p("Firstly, let's look and see if there a correlation between starting median salary and mid career salary", style="font-size:17px"),
              plotOutput("plot4"),
-             p("There is a strong correlation at first, but as starting median salary increases, you begin to see a saturation, suggesting a possible
+             p("There is a strong positive correlation between starting median salary and mid career salary, but as starting median salary increases, you begin to see a saturation, suggesting a possible
                plateau in mid career salary -- in which the starting median salary may increase but there is no increase in mid career salary.")),
     
     tabPanel("Salaries by College",
@@ -157,7 +157,20 @@ ui <- fluidPage(
             ),
   
              tabPanel("Observations",
-                      p("Do starting and mid career salaries differ between majors?", style="font-size:17px")
+                      p("Observations/summary of dataset", style="font-size:20px"), br(),
+                      p("Does it matter which name college I attend?", style="font-size:20px"),
+                      p("Attending an Ivy League school is likely to have higher starting and mid career salaries as well as an engineering school."), br(),
+                      p("Which major will yield the highest salary? Highest potential?", style ="font-size:20px"),
+                      p("Majors in engineering/math-related subjects have higher starting and mid career salaries, 
+                        whereas majoring in physician assistant will likely only have a higher starting salary, but not mid career salary when compared to other majors."),
+                      p("The highest potential for earning in the top 90th percentile is majoring in economics/finance or chemical engineering."), br(),
+                      p("Will the type of college impact salary?", style="font-size:20px"),
+                      p("Ivy league and engineering school will most likely yield higher salaries overall."), br(),
+                      p("Is paying for an Ivy League education really worth it in regards to salary?", style="font-size:20px"),
+                      p("Going to an engineering school will yield similar starting salaries compared to an ivy league, with similar tuition. However, going to a state engineering school and 
+                        paying in state tuition will yield similar starting salary as going to an out of state engineering school, but only paying 3x less in tuition cost"),
+                      p("Best scenario, go to an ivy league college and major in engineering/math related subjects or economics, if tuition isn't a factor. 
+                        If tuition is a factor, go to an in state engineering school and major in engineering.")
             
           ))
 
