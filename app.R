@@ -123,9 +123,7 @@ ui <- fluidPage(
                           and Mideastern regions are more similar in respect to starting and mid career salaries.")),
                
                tabPanel("Map and Table", p("Salaries by Region"),plotlyOutput("map1"), dataTableOutput("table1"))
-               #tabPanel("Summary Table", dataTableOutput("table2")),
-               #tabPanel("Table", dataTableOutput("table1"))
-               
+
                
              )),
     
@@ -155,7 +153,9 @@ server <- function(input, output) {
   
     output$plot1 <- renderPlot(
             ggplot(df_reg, aes(region)) +
-            geom_bar(color = 'slategray', alpha = 0.8)
+            geom_bar(color = 'slategray', alpha = 0.8)+
+            xlab(NULL) +
+            ggtitle("Distribution of Salaries by Region")
      ) 
     
     df_reg1 <- df_reg %>% 
@@ -178,8 +178,7 @@ server <- function(input, output) {
     ) 
 
     output$table1 <- renderDataTable(
-        df_reg #%>% 
-            #select(., school_name, region, start_med_slry, mid_car_slry)
+        df_reg
     )
     
     df3 <- df_state_reg %>% 
@@ -217,8 +216,6 @@ server <- function(input, output) {
             ggplot(aes(x= region, y=salary)) +
             geom_boxplot(aes(fill=time_in_career)) +
             geom_jitter(aes(color=time_in_career), alpha = 0.3) +
-            #scale_color_manual(values = c('lightsteelblue', 'lightseagreen'))+
-            #facet_wrap( ~ region, scales="free") +
             scale_fill_manual(values = c('tomato', 'lightseagreen'))+
             xlab(NULL) + ylab("Salary") + ggtitle("Distribution of Starting and Mid Career Salaries") +
             scale_y_continuous(labels=dollar)+
@@ -233,7 +230,6 @@ server <- function(input, output) {
             ylab("Mid Career Salary") +
             scale_x_continuous(labels=dollar) +
             scale_y_continuous(labels=dollar)
-        #strong correlation although, it looks like its almost saturating as start med salary increases
     ) 
     
     df4 <- df_state_reg %>% 
@@ -241,8 +237,7 @@ server <- function(input, output) {
       summarise(.,avgStart= (mean(start_med_slry)), avgMid=(mean(mid_car_slry)))
     
     output$table2 <- renderDataTable(
-        df4 #%>% 
-        #select(., school_name, region, start_med_slry, mid_car_slry)
+        df4 
     
     )
     
@@ -299,7 +294,6 @@ server <- function(input, output) {
         geom_boxplot(fill='slategray') +
         xlab(NULL) +
         scale_y_continuous(labels=dollar) +
-        #geom_text(aes(label=dollar(salary)), size = 3.5, hjust=1.2, color='black') +
         ggtitle("Percentile (10th, 25th, 75th, 90th) of Salaries by Major") +
         coord_flip() 
     )
@@ -318,32 +312,18 @@ server <- function(input, output) {
         scale_fill_manual(values = c('tomato', 'lightseagreen'))+
         xlab(NULL) +
         ylab('Salary')+
-        #geom_text(aes(label=dollar(salary)), size = 3.5, hjust=1.2, color='black') +
         ggtitle("Staring and Mid Career Salaries by School Type") +
         scale_y_continuous(labels=dollar) +
         coord_flip()
     )   
 
     
-    #transform = function(x){
-     # if (x=="Ivy League"){
-     #   return ("Ivy League")
-    #  }else if(x == "State"){
-    #    return ("State")
-    #  }else{
-    #    return (1)
-    #  }
-  #  }
-    
+
     df_col_ivy <- df_col_natf %>% 
       select(school_type, tuition_and_fees, in_state, start_med_slry, mid_car_slry) %>% 
-      #filter(school_type %in% c("Ivy League", "State")) %>% 
-      #mutate(school_type=sapply(school_type, transform)) %>% 
       mutate(tuition=tuition_and_fees*4) %>% 
       mutate(tuitionState=in_state*4) #%>% 
-      #select(., school_type, tuitionIvy, tuitionState, start_med_slry) 
-    write.csv(df_col_ivy, file = "df_col_ivy.csv")
-    
+
     my_text <- "In State Tuition"
     my_text1 <- "Out of State Tuition"
     my_grob = grid.text(my_text, x=0.18,  y=0.05, gp=gpar(col="black", fontsize=14, fontface="bold"))
