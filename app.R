@@ -45,6 +45,9 @@ df_col_nat <- merge(df_col, df_nat, by="school_name")
 df_col_natf <- df_col_nat %>% 
   select(-rank, -X5, -X6, -X7, -X8)
 
+df_reg2 <- df_reg %>% 
+  mutate(region = replace(region, region == "California", "Western"))
+
 # Define UI for application that draws a histogram
 
 ui <- fluidPage(
@@ -116,6 +119,7 @@ ui <- fluidPage(
     tabPanel("Salaries by Region", 
              tabsetPanel(
                tabPanel("Distribution by Region", 
+                        checkboxInput("somevalue", "California as Western", FALSE),
                         p("What is the distribution of salaries by college region?", style="font-size:17px"), plotOutput("plot1"),
                         p("There are more reported salaries by colleges in the Northeastern region than in any other region."),
                         br(),
@@ -123,6 +127,9 @@ ui <- fluidPage(
                         p(selectizeInput(inputId = "region",
                                          label = "Region",
                                          choices = unique(df_reg$region))), 
+                        p(selectizeInput(inputId = "major",
+                                         label = "Major",
+                                         choices = unique(df_deg$major))),
                         br(),
                         p(plotOutput("plot2")), 
                         p(plotOutput("plot3")),
@@ -168,7 +175,7 @@ ui <- fluidPage(
                       p("Ivy league and engineering school will most likely yield higher salaries overall."), br(),
                       p("Is paying for an Ivy League education really worth it in regards to salary?", style="font-size:20px"),
                       p("Going to an engineering school will yield similar starting salaries compared to an ivy league, with similar tuition. However, going to a state engineering school and 
-                        paying in state tuition will yield similar starting salary as going to an out of state engineering school, but only paying 3x less in tuition cost"),
+                        paying in state tuition will yield similar starting salary as going to an out of state engineering school, but only paying 3x less in tuition cost."),
                       p("Best scenario, go to an ivy league college and major in engineering/math related subjects or economics, if tuition isn't a factor. 
                         If tuition is a factor, go to an in state engineering school and major in engineering.")
             
@@ -181,19 +188,30 @@ ui <- fluidPage(
 
 server <- function(input, output) { 
   
+datasource <- reactive({ 
+  if (isTRUE(input$somevalue)){
+    df_reg2
+  } else{
+    df_reg
+  }})
+
+
     output$plot1 <- renderPlot(
-            ggplot(df_reg, aes(region)) +
+            ggplot(datasource(), aes(region)) +
             geom_bar(color = 'slategray')+
             xlab(NULL) +
             ggtitle("Distribution of Salaries by Region")
      ) 
     
-    df_reg1 <- df_reg %>% 
+    
+    
+    df_reg1 <- reactive({datasource() %>% 
       select(., region, start_med_slry, mid_car_slry) %>% 
       gather(time_in_career, salary, start_med_slry:mid_car_slry)
+    })
     
     output$plot2 <- renderPlot(
-        df_reg1 %>%
+        df_reg1() %>%
         filter(region == input$region) %>%
         ggplot(aes(x=salary)) + 
         geom_density(aes(color=time_in_career)) + 
@@ -203,12 +221,12 @@ server <- function(input, output) {
         theme(axis.text.x=element_text(angle=45)) +
         xlab("Salary") +
         scale_x_continuous(labels=dollar)
-
-        
     ) 
 
+    
+    
     output$table1 <- renderDataTable(
-        df_reg
+        datasource()
     )
     
     df3 <- df_state_reg %>% 
@@ -237,12 +255,13 @@ server <- function(input, output) {
         )
     )
     
-    df_reg_dis <- df_reg %>% 
+    df_reg_dis <- reactive({datasource() %>% 
       select(region, start_med_slry, mid_car_slry) %>% 
       gather(time_in_career, salary, start_med_slry:mid_car_slry) 
+    })
     
     output$plot3 <- renderPlot(
-        df_reg_dis %>% 
+        df_reg_dis() %>% 
             ggplot(aes(x= region, y=salary)) +
             geom_boxplot(aes(fill=time_in_career)) +
             geom_jitter(aes(color=time_in_career), alpha = 0.3) +
@@ -252,7 +271,7 @@ server <- function(input, output) {
             coord_flip()
     ) 
     output$plot4 <- renderPlot(
-        df_reg %>% 
+        datasource() %>% 
             ggplot(aes(start_med_slry, mid_car_slry)) +
             geom_point(alpha = 0.5) +
             geom_jitter() + geom_smooth(se=FALSE) +
@@ -382,7 +401,11 @@ server <- function(input, output) {
         ggtitle("Distribution of College Types")
     )
  
-    
+
+
+  
+  
+
 }
 
 
