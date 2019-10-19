@@ -127,16 +127,14 @@ ui <- fluidPage(
                         p(selectizeInput(inputId = "region",
                                          label = "Region",
                                          choices = unique(df_reg$region))), 
-                        p(selectizeInput(inputId = "major",
-                                         label = "Major",
-                                         choices = unique(df_deg$major))),
                         br(),
                         p(plotOutput("plot2")), 
                         p(plotOutput("plot3")),
                         p("California has the highest starting and mid career salary, with Northeast as second and also has the widest range. Western, Southern
-                          and Mideastern regions are more similar in respect to starting and mid career salaries.")),
+                          and Mideastern regions are more similar in respect to starting and mid career salaries. When California is incorporated into the Western region, the Northeast region has higher median starting and mid career salary.")),
                
-               tabPanel("Map and Table", p("Salaries by Region"),plotlyOutput("map1"), dataTableOutput("table1"))
+               tabPanel("Map and Table", 
+                        p("Salaries by Region"),plotlyOutput("map1"), dataTableOutput("table1"))
 
                
              )),
@@ -223,7 +221,6 @@ datasource <- reactive({
         scale_x_continuous(labels=dollar)
     ) 
 
-    
     
     output$table1 <- renderDataTable(
         datasource()
