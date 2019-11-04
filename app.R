@@ -45,7 +45,7 @@ df_col_nat <- merge(df_col, df_nat, by="school_name")
 df_col_natf <- df_col_nat %>% 
   select(-rank, -X5, -X6, -X7, -X8)
 
-df_reg2 <- df_reg %>% 
+df_reg_CAasWest <- df_reg %>% 
   mutate(region = replace(region, region == "California", "Western"))
 
 # Define UI for application that draws a histogram
@@ -67,7 +67,7 @@ ui <- fluidPage(
              p("5. Is paying for an Ivy League education really worth it in regards to salary?", style="font-size:19px"),
              br(),
              p("Firstly, let's look and see if there a correlation between starting median salary and mid career salary", style="font-size:17px"),
-             plotOutput("plot4"),
+             plotOutput("strt_mid_corr"),
              p("There is a strong positive correlation between starting median salary and mid career salary, but as starting median salary increases, you begin to see a saturation, suggesting a possible
                plateau in mid career salary -- in which the starting median salary may increase but there is no increase in mid career salary.")),
     
@@ -79,7 +79,7 @@ ui <- fluidPage(
                         p("Does school name impact your starting and mid career salary?"),
                         p("Depending on the school attended, there is a difference in starting and mid career salaries"),
                         plotOutput(
-                          outputId = "chart1",
+                          outputId = "slry_by_col",
                           height = "4800px"))
                
              )),
@@ -95,10 +95,10 @@ ui <- fluidPage(
                           majors with higher starting salaries (i.e. Physician Assistant) do not necessarily have higher mid career salaries and vice versa (i.e. Economics, which starts out lower, but has higher mid career salary."),
                         splitLayout(cellWidths=c("50%", "50%"),
                                     plotOutput(
-                                      outputId ="chart2",
+                                      outputId ="slry_by_major_strt",
                                       height = "1200px"),
                                     plotOutput(
-                                      outputId = "chart3",
+                                      outputId = "slry_by_major_mid",
                                       height = "1200px"))),
                tabPanel("Salary Distribution by Major",
                         p("Distribution of salaries/major (10th, 25th, 75th, 90th) percentile mid career"),
@@ -109,7 +109,7 @@ ui <- fluidPage(
                         p("-Majoring in economics yields the largest distribution of salary mid career, and the most potential of earning over $200K."),
                         p("-Different majors such as history, agriculture, journalism, communications film, and biology do not offer much of a difference in salary mid career."),
                         plotOutput(
-                          outputId="chart4",
+                          outputId="slry_percentile_bymajor",
                           height="1200px"))
             )),
     
@@ -120,7 +120,7 @@ ui <- fluidPage(
              tabsetPanel(
                tabPanel("Distribution by Region", 
                         checkboxInput("somevalue", "California as Western", FALSE),
-                        p("What is the distribution of salaries by college region?", style="font-size:17px"), plotOutput("plot1"),
+                        p("What is the distribution of salaries by college region?", style="font-size:17px"), plotOutput("slry_dist_reg"),
                         p("There are more reported salaries by colleges in the Northeastern region than in any other region."),
                         br(),
                         p("What does the distribution of starting salaries and mid career salaries look like across regions?", style="font-size:17px"),
@@ -128,13 +128,13 @@ ui <- fluidPage(
                                          label = "Region",
                                          choices = unique(df_reg$region))), 
                         br(),
-                        p(plotOutput("plot2")), 
-                        p(plotOutput("plot3")),
+                        p(plotOutput("strt_mid_slry_reg.density")), 
+                        p(plotOutput("strt_mid_slry_reg_boxplot")),
                         p("California has the highest starting and mid career salary, with Northeast as second and also has the widest range. Western, Southern
                           and Mideastern regions are more similar in respect to starting and mid career salaries. When California is incorporated into the Western region, the Northeast region has higher median starting and mid career salary.")),
                
                tabPanel("Map and Table", 
-                        p("Salaries by Region"),plotlyOutput("map1"), dataTableOutput("table1"))
+                        p("Salaries by Region"),plotlyOutput("map_of_slry"), dataTableOutput("slry_by_reg_tabl"))
 
                
              )),
@@ -145,18 +145,18 @@ ui <- fluidPage(
              tabsetPanel(
                tabPanel("College Types", 
                         p("Distribution of Salaries by College Type"),
-                        plotOutput(outputId="chart7", height="500px"),
+                        plotOutput(outputId="col_type_dis", height="500px"),
                         p("Majority of the data available/represented are from state colleges.")),
                tabPanel("Salaries by College Type", 
                         p("Does the type of college I attend matter?"),
-                        plotOutput(outputId="chart5", height="500px"),
+                        plotOutput(outputId="slry_by_col_type", height="500px"),
                         p("1. Going to an Ivy League will you give you the best chances of higher pay. Ivy League has less range in the starting salary and you're almost guaranteed ~$60K upon starting."),
                         p("2. Engineering schoos also gives you a good chance of higher starting and mid career salary."),
                         p("3. Going to a party school may have a higher minimum starting salary over going to a liberal arts or state school. However, a liberal arts college will have a slight advantage in median mid career salary over a party or state school."),
                         p("4. A state school will yield the lowest median starting and mid career salary but may have a higher max. mid career salary over a party school.")),
                tabPanel("Salaries vs Tuition Cost",
                         p("Is it worth going to an Ivy League?"),
-                        plotOutput(outputId = "chart6", height="500px"),
+                        plotOutput(outputId = "slry_vs_tuition", height="500px"),
                         p("Starting salaries upon graduating from an Ivy League is similar to an engineering school. However, to get the best
                           'bang for your buck', go to an engineering school in-state and pay in-state tuition. The starting salary is similar and you end up with less debt.")))
             ),
@@ -188,13 +188,13 @@ server <- function(input, output) {
   
 datasource <- reactive({ 
   if (isTRUE(input$somevalue)){
-    df_reg2
+    df_reg_CAasWest
   } else{
     df_reg
   }})
 
 
-    output$plot1 <- renderPlot(
+    output$slry_dist_reg <- renderPlot(
             ggplot(datasource(), aes(region)) +
             geom_bar(color = 'slategray')+
             xlab(NULL) +
@@ -208,7 +208,7 @@ datasource <- reactive({
       gather(time_in_career, salary, start_med_slry:mid_car_slry)
     })
     
-    output$plot2 <- renderPlot(
+    output$strt_mid_slry_reg.density <- renderPlot(
         df_reg1() %>%
         filter(region == input$region) %>%
         ggplot(aes(x=salary)) + 
@@ -222,22 +222,22 @@ datasource <- reactive({
     ) 
 
     
-    output$table1 <- renderDataTable(
+    output$slry_by_reg_tabl <- renderDataTable(
         datasource()
     )
     
-    df3 <- df_state_reg %>% 
+    state_by_reg <- df_state_reg %>% 
       group_by(., state, abbreviation) %>% 
       summarise(.,avgStart= (mean(start_med_slry)), 
                 avgMid=mean(mid_car_slry), color=mean(mid_car_slry)/max(mid_car_slry))
     
-    df3$hover <- with(df3, paste(state, '<br>'))
+    state_by_reg$hover <- with(state_by_reg, paste(state, '<br>'))
     
     l <- list(color = toRGB("white"), width = 2)
 
     
-    output$map1 <- renderPlotly(
-        plot_geo(df3, locationmode = 'USA-states') %>%
+    output$map_of_slry <- renderPlotly(
+        plot_geo(state_by_reg, locationmode = 'USA-states') %>%
         add_trace(
           z = ~avgStart, text = ~hover, locations = ~abbreviation,
           color = ~I(color), colors = c("steelblue1","steelblue")) %>%
@@ -257,7 +257,7 @@ datasource <- reactive({
       gather(time_in_career, salary, start_med_slry:mid_car_slry) 
     })
     
-    output$plot3 <- renderPlot(
+    output$strt_mid_slry_reg_boxplot <- renderPlot(
         df_reg_dis() %>% 
             ggplot(aes(x= region, y=salary)) +
             geom_boxplot(aes(fill=time_in_career)) +
@@ -267,7 +267,7 @@ datasource <- reactive({
             scale_y_continuous(labels=dollar)+
             coord_flip()
     ) 
-    output$plot4 <- renderPlot(
+    output$strt_mid_corr <- renderPlot(
         datasource() %>% 
             ggplot(aes(start_med_slry, mid_car_slry)) +
             geom_point(alpha = 0.5) +
@@ -278,21 +278,13 @@ datasource <- reactive({
             scale_y_continuous(labels=dollar)
     ) 
     
-    df4 <- df_state_reg %>% 
-      group_by(., state) %>% 
-      summarise(.,avgStart= (mean(start_med_slry)), avgMid=(mean(mid_car_slry)))
-    
-    output$table2 <- renderDataTable(
-        df4 
-    
-    )
     
     df_reg_gather<- df_reg %>% 
       select(school_name, region, start_med_slry, mid_car_slry) %>% 
       gather(region, salary, start_med_slry:mid_car_slry) %>% 
       arrange(desc(salary))
     
-    output$chart1 <- renderPlot(
+    output$slry_by_col <- renderPlot(
       df_reg_gather %>% 
         ggplot(aes(reorder(school_name, salary), salary, fill = region)) +
         geom_col() +
@@ -307,7 +299,7 @@ datasource <- reactive({
       select(major, start_med_slry, mid_car_slry) %>% 
       arrange(desc(start_med_slry))
     
-    output$chart2 <- renderPlot(
+    output$slry_by_major_strt <- renderPlot(
       df_deg_slry %>% 
         ggplot(aes(x=reorder(major, start_med_slry), start_med_slry)) +
         geom_col(fill='lightseagreen') +
@@ -319,7 +311,7 @@ datasource <- reactive({
     )
     
     
-    output$chart3 <- renderPlot(
+    output$slry_by_major_mid <- renderPlot(
       df_deg_slry %>% 
         ggplot(aes(x=reorder(major, mid_car_slry), mid_car_slry)) +
         geom_col(fill='tomato') +
@@ -334,7 +326,7 @@ datasource <- reactive({
       select(-start_med_slry, -mid_car_slry, -percent_chng) %>% 
       gather(percentile, salary, mid_car_10th:mid_car_90th)
     
-    output$chart4 <- renderPlot(
+    output$slry_percentile_bymajor <- renderPlot(
       df_deg_dis %>% 
         ggplot(aes(x=reorder(major, salary), salary)) +
         geom_boxplot(fill='slategray') +
@@ -350,7 +342,7 @@ datasource <- reactive({
       gather(type, salary, start_med_slry:mid_car_slry)
     
     
-    output$chart5 <- renderPlot(
+    output$slry_by_col_type <- renderPlot(
       df_col_type %>% 
         ggplot(aes(x=reorder(school_type, salary), salary)) +
         geom_boxplot(aes(fill=type)) +
@@ -375,7 +367,7 @@ datasource <- reactive({
     my_grob = grid.text(my_text, x=0.18,  y=0.05, gp=gpar(col="black", fontsize=14, fontface="bold"))
     my_grob1 = grid.text(my_text1, x=0.75,  y=0.05, gp=gpar(col="black", fontsize=14, fontface="bold"))
     
-    output$chart6 <- renderPlot(
+    output$slry_vs_tuition <- renderPlot(
       df_col_ivy %>% 
         ggplot() +
         geom_boxplot(aes(x=tuition, y=start_med_slry, fill=school_type)) +
@@ -391,7 +383,7 @@ datasource <- reactive({
         
     )
     
-    output$chart7 <- renderPlot(
+    output$col_type_dis <- renderPlot(
         ggplot(df_col, aes(school_type)) +
         geom_bar(color = 'slategray')+
         xlab(NULL) +
